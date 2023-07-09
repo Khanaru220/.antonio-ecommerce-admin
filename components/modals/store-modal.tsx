@@ -41,8 +41,7 @@ export const StoreModal = () => {
 			setLoading(true);
 
 			const response = await axios.post('/api/stores', values);
-
-			toast.success('Store created.');
+			window.location.assign(`/${response.data.id}`);
 		} catch (error) {
 			toast.error('Something went wrong.');
 		} finally {
@@ -58,7 +57,7 @@ export const StoreModal = () => {
 			onClose={storeModal.onClose}
 		>
 			<div>
-				<div className="spact-y-4 py-2 pb-4">
+				<div className="space-y-4 py-2 pb-4">
 					<Form {...form}>
 						<form onSubmit={form.handleSubmit(onSubmit)}>
 							<FormField
@@ -86,6 +85,7 @@ export const StoreModal = () => {
 								>
 									Cancel
 								</Button>
+								{/* (FIXME) Press Enter will close modal*/}
 								<Button disabled={loading} type="submit">
 									Continue
 								</Button>
