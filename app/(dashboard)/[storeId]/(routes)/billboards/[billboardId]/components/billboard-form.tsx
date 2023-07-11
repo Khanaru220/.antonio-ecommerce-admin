@@ -97,7 +97,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 			// (?) compare two options below: router.push() has delay on redirect
 			// router.refresh();
 			// router.push('/');
-			window.location.assign('/');
+			window.location.assign(`/${params.storeId}/billboards`);
 			toast.success('Billboard deleted.');
 		} catch (error) {
 			toast.error(
