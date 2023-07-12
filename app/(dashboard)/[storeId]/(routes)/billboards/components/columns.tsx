@@ -2,7 +2,7 @@
 
 import { ColumnDef } from '@tanstack/react-table';
 
-import { CellAction } from './cell-actions';
+import { CellAction } from './cell-action';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -22,5 +22,6 @@ export const columns: ColumnDef<BillboardColumn>[] = [
 		header: 'Date',
 	},
 	// {row} from @tanstack - access original project
+	// {row}'s return will be rendered (could be element or data)
 	{ id: 'action', cell: ({ row }) => <CellAction data={row.original} /> },
 ];
