@@ -11,6 +11,7 @@ const CategoriesPage = async ({ params }: { params: { storeId: string } }) => {
 			storeId: params.storeId,
 		},
 		include: {
+			// take 'label'
 			billboard: true,
 		},
 		orderBy: {
