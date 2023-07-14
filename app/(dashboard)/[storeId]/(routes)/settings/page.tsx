@@ -24,6 +24,10 @@ const SettingsPage: React.FC<SettingsPageProps> = async ({ params }) => {
 		},
 	});
 
+	if (!store) {
+		redirect('/');
+	}
+
 	// (FIXME) duplicate with [storeId]'s layout but it get rid of TS warning about initialData
 	// if (!store) {
 	// redirect('/');
